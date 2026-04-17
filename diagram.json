@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "author": "VibeAlert Team",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 4.7, "left": 4.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -118.4,
+      "left": 197.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 100,
+      "left": 400,
+      "attrs": { "label": "Sound Level" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-red",
+      "top": 207.6,
+      "left": 464.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-green",
+      "top": 250,
+      "left": 450,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-blue",
+      "top": 300,
+      "left": 450,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-emergency",
+      "top": 400,
+      "left": 400,
+      "attrs": { "color": "red", "label": "EMERGENCY" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-doorbell",
+      "top": 470,
+      "left": 400,
+      "attrs": { "color": "blue", "label": "DOORBELL" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-routine",
+      "top": 540,
+      "left": 400,
+      "attrs": { "color": "yellow", "label": "ROUTINE" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer1",
+      "top": 597.6,
+      "left": 184.2,
+      "attrs": { "volume": "0.5" }
+    },
+    { "type": "wokwi-resistor", "id": "r1", "top": 210, "left": 350, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 260, "left": 350, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 310, "left": 350, "attrs": { "value": "220" } },
+    { "type": "wokwi-pi-pico", "id": "motor", "top": 150, "left": 600, "hide": true, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "lcd1:GND", "black", [ "h0" ] ],
+    [ "esp:3V3", "lcd1:VCC", "red", [ "h0" ] ],
+    [ "esp:21", "lcd1:SDA", "green", [ "h0" ] ],
+    [ "esp:22", "lcd1:SCL", "blue", [ "h0" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "h0" ] ],
+    [ "led-red:A", "r1:1", "red", [ "h0" ] ],
+    [ "r1:2", "esp:26", "red", [ "h0" ] ],
+    [ "led-red:C", "esp:GND.2", "black", [ "h0" ] ],
+    [ "led-green:A", "r2:1", "green", [ "h0" ] ],
+    [ "r2:2", "esp:27", "green", [ "h0" ] ],
+    [ "led-green:C", "esp:GND.2", "black", [ "h0" ] ],
+    [ "led-blue:A", "r3:1", "blue", [ "h0" ] ],
+    [ "r3:2", "esp:14", "blue", [ "h0" ] ],
+    [ "led-blue:C", "esp:GND.2", "black", [ "h0" ] ],
+    [ "btn-emergency:1.l", "esp:32", "red", [ "h0" ] ],
+    [ "btn-emergency:2.l", "esp:GND.2", "black", [ "h0" ] ],
+    [ "btn-doorbell:1.l", "esp:33", "blue", [ "h0" ] ],
+    [ "btn-doorbell:2.l", "esp:GND.2", "black", [ "h0" ] ],
+    [ "btn-routine:1.l", "esp:35", "yellow", [ "h0" ] ],
+    [ "btn-routine:2.l", "esp:GND.2", "black", [ "h0" ] ],
+    [ "buzzer1:1", "esp:13", "orange", [ "h0" ] ],
+    [ "buzzer1:2", "esp:GND.2", "black", [ "h0" ] ],
+    [ "lcd1:SDA", "esp:D21", "green", [ "h-96", "v134.6" ] ],
+    [ "lcd1:SCL", "esp:D22", "green", [ "h-96", "v96.3" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v-14.9", "h-323.4" ] ],
+    [ "pot1:SIG", "esp:D34", "green", [ "v-110.9", "h-429.4" ] ],
+    [ "r1:2", "esp:D26", "green", [ "v-110.05", "h-399.2" ] ],
+    [ "r2:2", "esp:D27", "green", [ "v-150.45", "h-399.2" ] ],
+    [ "r3:2", "esp:D14", "green", [ "v-190.85", "h-399.2" ] ],
+    [ "buzzer1:2", "esp:D15", "green", [ "v-537.6", "h-115.6" ] ],
+    [ "btn-emergency:1.l", "esp:D32", "green", [ "h-390.4", "v-336.2" ] ],
+    [ "btn-doorbell:1.l", "esp:D33", "green", [ "h-390.4", "v-396.6" ] ],
+    [ "btn-routine:1.l", "esp:D35", "green", [ "h-390.4", "v-485.8" ] ]
+  ],
+  "dependencies": {}
+}
