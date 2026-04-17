@@ -27,9 +27,9 @@ AuraLink bridges the accessibility gap by providing an **affordable**, **customi
 
 | Feature | Detail |
 |---|---|
-| 💰 **Cost-Effective** | Entire hardware implementation costs **under $100** |
-| 📳 **Multi-Modal Feedback** | Simultaneously uses vibration patterns, colour-coded LEDs, LCD display, and mobile push notifications |
-| ⚙️ **Highly Customizable** | Users can adjust sound sensitivity and vibration intensity via a mobile app |
+| **Cost-Effective** | Entire hardware implementation costs **under $100** |
+| **Multi-Modal Feedback** | Simultaneously uses vibration patterns, colour-coded LEDs, LCD display, and mobile push notifications |
+| **Highly Customizable** | Users can adjust sound sensitivity and vibration intensity via a mobile app |
 
 ---
 
@@ -119,5 +119,3 @@ The AuraLink System is more than just a technical prototype — it is a **practi
 
 ---
 
-
-<p align="center">Built with ❤️ to make the world more accessible.</p>
