@@ -2,12 +2,6 @@
 
 > **IoT-Based Multi-Modal Alert System for Hearing Impaired Individuals**
 
-![Platform](https://img.shields.io/badge/Platform-ESP32-blue?style=flat-square)
-![IDE](https://img.shields.io/badge/IDE-Arduino-teal?style=flat-square)
-![Cloud](https://img.shields.io/badge/Cloud-Blynk%20IoT-purple?style=flat-square)
-![Cost](https://img.shields.io/badge/Hardware%20Cost-Under%20%24100-green?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-orange?style=flat-square)
-
 ---
 
 ## Project Overview
